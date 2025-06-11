@@ -1,84 +1,1487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WayCloud Host — Fast & Reliable Hosting</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <meta property="og:title" content="WayCloud Hosting — Fast & Reliable" />
-  <meta property="og:description" content="Get powerful VPS plans + minecraft servers starting at just $10.40/mo. + 5$ (for minecraft) Powered by Ryzen 5 & Ryzen 9 processors. Join WayCloud today!" />
-  <meta property="og:image" content="https://waycloud.myddns.me/waycloud.png" />
-  <meta property="og:url" content="https://waycloud.myddns.me/index.html" />
-  <meta property="og:type" content="website" />
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayCloud Premium - Elite Game & VPS Hosting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5649c0;
+            --secondary: #a29bfe;
+            --discord: #5865F2;
+            --dark: #121218;
+            --darker: #0a0a0e;
+            --light: #f5f6fa;
+            --accent: #00cec9;
+            --dirt: #8B4513;
+            --gold: #FFD700;
+            --iron: #C0C0C0;
+            --diamond: #4EE2EC;
+            --bedrock: #5D3A1A;
+            --barrier: #7D3CF0;
+            --ryzen5: #1E90FF;
+            --ryzen9: #FF6347;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(44, 44, 56, 0.9) 0%, rgba(28, 28, 36, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover i {
+            transform: rotate(15deg);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(108, 92, 231, 0.4);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.5);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+        
+        .cta-button.discord {
+            background: linear-gradient(135deg, var(--discord), #4752c4);
+            box-shadow: 0 4px 20px rgba(88, 101, 242, 0.4);
+        }
+        
+        .cta-button.discord:hover {
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.5);
+            background: linear-gradient(135deg, #4752c4, var(--discord));
+        }
+        
+        .hero {
+            padding: 12rem 5% 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1607513746994-51f730a44832?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .hero h2 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .discord-notice {
+            background: rgba(88, 101, 242, 0.15);
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .discord-notice h3 {
+            color: var(--light);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .discord-notice p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discord-link {
+            color: var(--discord);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .discord-link:hover {
+            color: #aeb7ff;
+            text-decoration: underline;
+        }
+        
+        .features {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(44, 44, 56, 0.5) 0%, rgba(28, 28, 36, 0.7) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-geometric.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-weight: 700;
+        }
+        
+        .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            background: rgba(44, 44, 56, 0.6);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+            background: rgba(44, 44, 56, 0.8);
+        }
+        
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.8rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .feature-card h4 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+        
+        .locations {
+            padding: 6rem 5%;
+            text-align: center;
+            background: var(--darker);
+        }
+        
+        .locations-map {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .locations-map img {
+            width: 100%;
+            display: block;
+        }
+        
+        .server-marker {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 6px rgba(108, 92, 231, 0.3);
+            animation: pulse 2s infinite;
+            z-index: 2;
+        }
+        
+        .server-marker::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: rgba(108, 92, 231, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse2 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(108, 92, 231, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+            }
+        }
+        
+        @keyframes pulse2 {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.8;
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-tab {
+            padding: 0.9rem 2.2rem;
+            background: rgba(44, 44, 56, 0.6);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            font-weight: 500;
+            font-size: 1.05rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .pricing-tab.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 20px rgba(108, 92, 231, 0.4);
+        }
+        
+        .pricing-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pricing-content {
+            display: none;
+            padding: 1rem 0 3rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pricing-content.active {
+            display: block;
+        }
+        
+        .pricing {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(44, 44, 56, 0.5) 0%, rgba(28, 28, 36, 0.7) 100%);
+            position: relative;
+        }
+        
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-card {
+            background: rgba(44, 44, 56, 0.6);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+            background: rgba(44, 44, 56, 0.8);
+        }
+        
+        .plan-name {
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plan-name i {
+            font-size: 1.4rem;
+        }
+        
+        .dirt-plan { color: var(--dirt); }
+        .gold-plan { color: var(--gold); }
+        .iron-plan { color: var(--iron); }
+        .diamond-plan { color: var(--diamond); }
+        .bedrock-plan { color: var(--bedrock); }
+        .barrier-plan { color: var(--barrier); }
+        .ryzen5-plan { color: var(--ryzen5); }
+        .ryzen9-plan { color: var(--ryzen9); }
+        
+        .plan-price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1;
+        }
+        
+        .plan-price span {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: normal;
+            margin-top: 0.5rem;
+            margin-left: 0.3rem;
+        }
+        
+        .plan-features {
+            margin-bottom: 2.5rem;
+        }
+        
+        .plan-features li {
+            list-style: none;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-features li i {
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .dirt-plan .plan-features li i { color: var(--dirt); }
+        .gold-plan .plan-features li i { color: var(--gold); }
+        .iron-plan .plan-features li i { color: var(--iron); }
+        .diamond-plan .plan-features li i { color: var(--diamond); }
+        .bedrock-plan .plan-features li i { color: var(--bedrock); }
+        .barrier-plan .plan-features li i { color: var(--barrier); }
+        .ryzen5-plan .plan-features li i { color: var(--ryzen5); }
+        .ryzen9-plan .plan-features li i { color: var(--ryzen9); }
+        
+        .plan-button {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dirt-plan .plan-button {
+            background: var(--dirt);
+            color: white;
+        }
+        
+        .gold-plan .plan-button {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .iron-plan .plan-button {
+            background: var(--iron);
+            color: var(--dark);
+        }
+        
+        .diamond-plan .plan-button {
+            background: var(--diamond);
+            color: var(--dark);
+        }
+        
+        .bedrock-plan .plan-button {
+            background: var(--bedrock);
+            color: white;
+        }
+        
+        .barrier-plan .plan-button {
+            background: var(--barrier);
+            color: white;
+        }
+        
+        .ryzen5-plan .plan-button {
+            background: var(--ryzen5);
+            color: white;
+        }
+        
+        .ryzen9-plan .plan-button {
+            background: var(--ryzen9);
+            color: white;
+        }
+        
+        .plan-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 2.5rem;
+            transform: rotate(45deg);
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonials {
+            padding: 8rem 5%;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--darker), #08080b);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1300px;
+            margin: 3rem auto 0;
+        }
+        
+        .testimonial-card {
+            background: rgba(44, 44, 56, 0.6);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: left;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .testimonial-card .quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            position: relative;
+        }
+        
+        .testimonial-card .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            color: rgba(108, 92, 231, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info h5 {
+            color: var(--light);
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        
+        .author-info p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        .discord-cta {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.1) 0%, rgba(28, 28, 36, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .discord-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .discord-cta .section-title h3 {
+            color: white;
+        }
+        
+        .discord-cta .section-title p {
+            max-width: 700px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, rgba(44, 44, 56, 0.9) 0%, rgba(28, 28, 36, 0.95) 100%);
+            padding: 5rem 5% 2rem;
+            border-top: 1px solid rgba(108, 92, 231, 0.3);
+            position: relative;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+        
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.8rem;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            background: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        .social-links a.discord:hover {
+            background: var(--discord);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        .floating-discord {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--discord);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(88, 101, 242, 0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-discord:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.5);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title h3 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 10rem 5% 6rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h3 {
+                font-size: 2.2rem;
+            }
+            
+            .pricing-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-tab {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .floating-discord {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h3 {
+                font-size: 1.8rem;
+            }
+            
+            .plan-name {
+                font-size: 1.6rem;
+            }
+            
+            .plan-price {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-cloud"></i>
+                <h1>WayCloud</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#locations">Locations</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+            <button class="cta-button discord">
+                <i class="fab fa-discord"></i> Join Discord
+            </button>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Premium Hosting Solutions</h2>
+        <p>Experience unparalleled performance with our high-performance servers. Join thousands of satisfied customers who trust WayCloud for their hosting needs.</p>
+        
+        <div class="button-group">
+            <button class="cta-button">
+                <i class="fas fa-rocket"></i> Get Started
+            </button>
+            <button class="cta-button discord">
+                <i class="fab fa-discord"></i> Order via Discord
+            </button>
+        </div>
+        
+        <div class="discord-notice">
+            <h3><i class="fab fa-discord"></i> All Orders Processed Through Discord</h3>
+            <p>To provide personalized service and support, all orders are handled through our Discord server. Join our community to get started with your hosting solution today!</p>
+            <a href="https://discord.gg/bamEJbJX" class="discord-link" target="_blank">
+                <i class="fab fa-discord"></i> https://discord.gg/bamEJbJX
+            </a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="section-title">
+            <h3>Why Choose WayCloud?</h3>
+            <p>We go beyond basic hosting to deliver exceptional performance with enterprise-grade infrastructure and personalized support.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h4>24/7 Priority Support</h4>
+                <p>Our elite support team is available around the clock with average response times under 5 minutes via Discord for premium customers.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h4>Extreme Performance</h4>
+                <p>Powered by AMD Ryzen processors and NVMe SSD storage for lightning-fast performance and minimal latency.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Advanced DDoS Protection</h4>
+                <p>Enterprise-grade protection that automatically mitigates attacks before they reach your server, keeping your services online.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h4>Global Network</h4>
+                <p>15 locations across 6 continents ensure low latency for users worldwide, with easy server location switching.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <h4>Easy Management</h4>
+                <p>Intuitive control panel and Discord bot for easy server management, configuration, and monitoring.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-backup"></i>
+                </div>
+                <h4>Automated Backups</h4>
+                <p>Daily encrypted backups with 7-day retention to protect your data from loss, with one-click restoration.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="locations" id="locations">
+        <div class="section-title">
+            <h3>Our Global Infrastructure</h3>
+            <p>We operate state-of-the-art data centers in strategic locations worldwide to minimize latency and maximize uptime.</p>
+        </div>
+        
+        <div class="locations-map">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1200px-World_map_-_low_resolution.svg.png" alt="World Map">
+            <div class="server-marker" style="top: 25%; left: 20%;" data-location="North America"></div>
+            <div class="server-marker" style="top: 30%; left: 75%;" data-location="Asia"></div>
+            <div class="server-marker" style="top: 45%; left: 50%;" data-location="Europe"></div>
+            <div class="server-marker" style="top: 60%; left: 15%;" data-location="South America"></div>
+            <div class="server-marker" style="top: 70%; left: 80%;" data-location="Australia"></div>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <div class="section-title">
+            <h3>Choose Your Perfect Plan</h3>
+            <p>Select the hosting solution that fits your needs. All plans include premium features and Discord support.</p>
+        </div>
+        
+        <div class="pricing-tabs">
+            <div class="pricing-tab active" data-tab="minecraft">
+                <i class="fas fa-cube"></i> Minecraft Hosting
+            </div>
+            <div class="pricing-tab" data-tab="vps">
+                <i class="fas fa-server"></i> VPS Hosting
+            </div>
+        </div>
+        
+        <div class="pricing-content active" id="minecraft-tab">
+            <div class="pricing-container">
+                <div class="pricing-card dirt-plan">
+                    <div class="plan-name"><i class="fas fa-cube"></i> Dirt Plan</div>
+                    <div class="plan-price">$2.00<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> 2 GB RAM</li>
+                        <li><i class="fas fa-microchip"></i> Ryzen 5 CPU</li>
+                        <li><i class="fas fa-users"></i> Up to 10 players</li>
+                        <li><i class="fas fa-hdd"></i> 20 GB SSD Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Basic DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card gold-plan">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="plan-name"><i class="fas fa-coins"></i> Gold Plan</div>
+                    <div class="plan-price">$3.99<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> 4 GB RAM</li>
+                        <li><i class="fas fa-microchip"></i> Ryzen 5 CPU</li>
+                        <li><i class="fas fa-users"></i> Up to 20 players</li>
+                        <li><i class="fas fa-hdd"></i> 40 GB SSD Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Standard DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Priority Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card iron-plan">
+                    <div class="plan-name"><i class="fas fa-shield-alt"></i> Iron Plan</div>
+                    <div class="plan-price">$4.99<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> 8 GB RAM</li>
+                        <li><i class="fas fa-microchip"></i> Ryzen 5 CPU</li>
+                        <li><i class="fas fa-users"></i> Up to 40 players</li>
+                        <li><i class="fas fa-hdd"></i> 80 GB SSD Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Standard DDoS Protection</li>
+                        <li><i class="fas fa-clock"></i> Priority Queue</li>
+                        <li><i class="fab fa-discord"></i> Priority Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card diamond-plan">
+                    <div class="plan-name"><i class="fas fa-gem"></i> Diamond Plan</div>
+                    <div class="plan-price">$5.99<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> 16 GB RAM</li>
+                        <li><i class="fas fa-microchip"></i> Ryzen 9 CPU</li>
+                        <li><i class="fas fa-users"></i> Up to 80 players</li>
+                        <li><i class="fas fa-hdd"></i> 160 GB SSD Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Advanced DDoS Protection</li>
+                        <li><i class="fas fa-clock"></i> Priority Support</li>
+                        <li><i class="fab fa-discord"></i> VIP Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card bedrock-plan">
+                    <div class="plan-name"><i class="fas fa-mountain"></i> Bedrock Plan</div>
+                    <div class="plan-price">$10.99<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> 32 GB RAM</li>
+                        <li><i class="fas fa-microchip"></i> Ryzen 9 CPU</li>
+                        <li><i class="fas fa-users"></i> Up to 150 players</li>
+                        <li><i class="fas fa-hdd"></i> 320 GB SSD Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Premium DDoS Protection</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Priority Support</li>
+                        <li><i class="fas fa-globe"></i> Free Dedicated IP</li>
+                        <li><i class="fab fa-discord"></i> VIP Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card barrier-plan">
+                    <div class="plan-name"><i class="fas fa-shield-virus"></i> Barrier Plan</div>
+                    <div class="plan-price">$15.99+<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-memory"></i> Custom RAM Allocation</li>
+                        <li><i class="fas fa-microchip"></i> EPYC or Threadripper CPU</li>
+                        <li><i class="fas fa-users"></i> Unlimited Players</li>
+                        <li><i class="fas fa-hdd"></i> Custom Storage</li>
+                        <li><i class="fas fa-shield-alt"></i> Enterprise DDoS Protection</li>
+                        <li><i class="fas fa-headset"></i> Dedicated Support Agent</li>
+                        <li><i class="fas fa-server"></i> Custom Server Configuration</li>
+                        <li><i class="fab fa-discord"></i> Dedicated Discord Channel</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pricing-content" id="vps-tab">
+            <div class="pricing-container">
+                <div class="pricing-card ryzen5-plan">
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R5 – 16 GB</div>
+                    <div class="plan-price">$10.40<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 4 vCore Ryzen 5 5600G</li>
+                        <li><i class="fas fa-memory"></i> 16 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 128 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Basic DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card ryzen5-plan">
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R5 – 32 GB</div>
+                    <div class="plan-price">$20.80<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 6 vCore Ryzen 5 5600G</li>
+                        <li><i class="fas fa-memory"></i> 32 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 256 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Standard DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Priority Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card ryzen5-plan">
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R5 – 64 GB</div>
+                    <div class="plan-price">$41.60<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 8 vCore Ryzen 5 5600G</li>
+                        <li><i class="fas fa-memory"></i> 64 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 512 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Standard DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Priority Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card ryzen9-plan">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R9 – 16 GB</div>
+                    <div class="plan-price">$16.00<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 6 vCore Ryzen 9</li>
+                        <li><i class="fas fa-memory"></i> 16 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 128 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Advanced DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> Priority Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card ryzen9-plan">
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R9 – 32 GB</div>
+                    <div class="plan-price">$32.00<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 8 vCore Ryzen 9</li>
+                        <li><i class="fas fa-memory"></i> 32 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 256 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Advanced DDoS Protection</li>
+                        <li><i class="fab fa-discord"></i> VIP Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+                
+                <div class="pricing-card ryzen9-plan">
+                    <div class="plan-name"><i class="fas fa-microchip"></i> R9 – 64 GB</div>
+                    <div class="plan-price">$64.00<span>/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-microchip"></i> 12 vCore Ryzen 9</li>
+                        <li><i class="fas fa-memory"></i> 64 GB DDR4 RAM</li>
+                        <li><i class="fas fa-hdd"></i> 512 GB NVMe Storage</li>
+                        <li><i class="fas fa-network-wired"></i> 1 GBPS Internet</li>
+                        <li><i class="fas fa-tachometer-alt"></i> 10 TB Bandwidth</li>
+                        <li><i class="fas fa-shield-alt"></i> Premium DDoS Protection</li>
+                        <li><i class="fas fa-globe"></i> Free Dedicated IP</li>
+                        <li><i class="fab fa-discord"></i> VIP Discord Support</li>
+                    </ul>
+                    <button class="plan-button">
+                        <i class="fab fa-discord"></i> Order via Discord
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="discord-cta">
+        <div class="section-title">
+            <h3>Join Our Discord Community</h3>
+            <p>All orders and support are handled through our Discord server. Join now to get started with your premium hosting solution!</p>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <a href="https://discord.gg/bamEJbJX" class="cta-button discord" target="_blank">
+                <i class="fab fa-discord"></i> Join Discord Now
+            </a>
+        </div>
+        
+        <div class="discord-notice" style="max-width: 600px; margin-top: 3rem;">
+            <h3><i class="fas fa-info-circle"></i> How It Works</h3>
+            <p>1. Join our Discord server<br>
+               2. Open a ticket in #support channel<br>
+               3. Our team will guide you through setup<br>
+               4. Enjoy your premium hosting!</p>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h3>Trusted by Thousands</h3>
+            <p>Don't just take our word for it. Here's what our customers say about our premium hosting.</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="quote">WayCloud's hosting transformed our Minecraft network. The performance is incredible, and their Discord support team responds within minutes, day or night.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h5>John Doe</h5>
+                        <p>Owner of BlockCraft Network</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="quote">After trying several hosts, WayCloud stands out with their Ryzen-powered VPS and amazing support. The Discord-based ordering was surprisingly smooth!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AS</div>
+                    <div class="author-info">
+                        <h5>Alice Smith</h5>
+                        <p>CTO at TechStartup</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="quote">The global server locations made all the difference for our international users. Plus, having all support through Discord makes communication so easy.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RJ</div>
+                    <div class="author-info">
+                        <h5>Robert Johnson</h5>
+                        <p>Founder of WebApp Inc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>WayCloud</h4>
+                <p>Premium hosting solutions with unparalleled performance and Discord-based support.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://discord.gg/bamEJbJX" class="discord" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Hosting</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-cube"></i> Minecraft Hosting</a></li>
+                    <li><a href="#"><i class="fas fa-server"></i> VPS Hosting</a></li>
+                    <li><a href="#"><i class="fas fa-database"></i> Dedicated Servers</a></li>
+                    <li><a href="#"><i class="fas fa-globe"></i> Web Hosting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Data Centers</a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> Careers</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> News</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="https://discord.gg/bamEJbJX" target="_blank"><i class="fab fa-discord"></i> Discord Support</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Knowledge Base</a></li>
+                    <li><a href="#"><i class="fas fa-signal"></i> Status</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 WayCloud Technologies. All rights reserved. All orders processed through Discord.</p>
+        </div>
+    </footer>
 
-  <!-- Promo Bar -->
-  <div class="bg-gray-800 text-sm text-center py-2">
-    <span class="bg-gray-700 text-white px-2 py-1 rounded-md font-bold">WAY20</span>
-    <span class="ml-2">Get 20% off your first order</span>
-  </div>
+    <a href="https://discord.gg/bamEJbJX" class="floating-discord" target="_blank">
+        <i class="fab fa-discord"></i>
+    </a>
 
-  <!-- Simple Navbar -->
-  <nav class="bg-gray-900 p-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-white">WayCloud Host</div>
-    <div class="space-x-4 flex items-center">
-      <a href="minecraft.html" class="text-gray-300 hover:text-white">Minecraft</a>
-      <a href="discord.html" class="text-gray-300 hover:text-white">Discord</a>
-      <a href="vps.html" class="text-gray-300 hover:text-white">VPS</a>
-      <a href="index.html" class="text-gray-300 hover:text-white">HOME</a>
-      <a href="https://discord.gg/CwSsyjMHbT" class="text-gray-300 hover:text-white">CLICK TO ORDER</a>
-    </div>
-    <a href="https://panel.waycloud.xyz" class="bg-purple-600 text-white px-4 py-2 rounded font-semibold hover:bg-purple-700">Panel Host</a>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-800">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Minecraft Server Hosting</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
-      We provide the best game server hosting in the world. Our servers are located in 5 countries on 3 continents, and we have the best support team in the industry.
-    </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <img src="https://preview.redd.it/egnyfqp8r8081.png?width=640&crop=smart&auto=webp&s=525a752d2f845c5f1be041b9a8b81526f0c66072" class="w-32 rounded-lg" alt="Minecraft" />
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="py-20 px-6 text-center bg-gray-900">
-    <h2 class="text-3xl font-bold mb-6">Why Choose WayCloud?</h2>
-    <div class="flex flex-wrap justify-center gap-8">
-      <div class="max-w-sm bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
-        <p>Our expert staff is always available to help you anytime.</p>
-      </div>
-      <div class="max-w-sm bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">High Performance</h3>
-        <p>Top-tier hardware and DDoS protection ensure stability.</p>
-      </div>
-      <div class="max-w-sm bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Affordable Pricing</h3>
-        <p>Our plans are budget-friendly without compromising quality.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="py-16 text-center bg-gradient-to-r from-purple-700 to-indigo-800">
-    <h2 class="text-3xl font-bold mb-4">Start Your Hosting Journey Today</h2>
-    <p class="mb-6">Join hundreds of satisfied customers using WayCloud.</p>
-    <a href="YOUR_DISCORD_INVITE_HERE" class="bg-white text-purple-700 px-6 py-3 rounded font-bold hover:bg-gray-100">Join Our Discord</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-center py-6 text-sm text-gray-500">
-    &copy; 2025 WayCloud Host. All rights reserved.
-  </footer>
-
+    <script>
+        // Tab switching functionality
+        const tabs = document.querySelectorAll('.pricing-tab');
+        const tabContents = document.querySelectorAll('.pricing-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
 </body>
 </html>
